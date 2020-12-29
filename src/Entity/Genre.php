@@ -25,7 +25,7 @@ class Genre
     private $nom;
 
     /**
-     * @ORM\OneToMany(targetEntity=film::class, mappedBy="genre")
+     * @ORM\OneToMany(targetEntity=Film::class, mappedBy="genre")
      */
     private $films;
 
@@ -79,5 +79,10 @@ class Genre
         }
 
         return $this;
+    }
+
+    public function __toString(): ?string
+    {
+        return $this->nom;
     }
 }

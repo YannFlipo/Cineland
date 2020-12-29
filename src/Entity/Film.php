@@ -45,7 +45,7 @@ class Film
     private $ageMinimal;
 
     /**
-     * @ORM\ManyToMany(targetEntity=acteur::class, inversedBy="films")
+     * @ORM\ManyToMany(targetEntity=Acteur::class, inversedBy="films")
      */
     private $acteurs;
 
@@ -158,5 +158,10 @@ class Film
         $this->genre = $genre;
 
         return $this;
+    }
+
+    public function __toString(): ?string
+    {
+        return $this->titre;
     }
 }

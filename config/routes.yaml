@@ -1,3 +1,48 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+acteur_index:
+  path: /acteur_index
+  controller: App\Controller\ActeurController::index
+acteur_new:
+  path: /acteur_new
+  controller: App\Controller\ActeurController::new
+acteur_show:
+  path: /acteur_show/{id}
+  controller: App\Controller\ActeurController::show
+acteur_edit:
+  path: /acteur_edit/{id}/edit
+  controller: App\Controller\ActeurController::edit
+acteur_delete:
+  path: /acteur_delete/{id}
+  controller: App\Controller\ActeurController::delete
+film_index:
+  path: /film_index
+  controller: App\Controller\FilmController::index
+film_new:
+  path: /film_new
+  controller: App\Controller\FilmController::new
+film_show:
+  path: /film_show/{id}
+  controller: App\Controller\FilmController::show
+film_edit:
+  path: /film_edit/{id}/edit
+  controller: App\Controller\FilmController::edit
+film_delete:
+  path: /film_delete/{id}
+  controller: App\Controller\FilmController::delete
+genre_index:
+  path: /genre_index
+  controller: App\Controller\GenreController::index
+genre_new:
+  path: /genre_new
+  controller: App\Controller\GenreController::new
+genre_show:
+  path: /genre_show/{id}
+  controller: App\Controller\GenreController::show
+genre_edit:
+  path: /genre_edit/{id}/edit
+  controller: App\Controller\GenreController::edit
+genre_delete:
+  path: /genre_delete/{id}
+  controller: App\Controller\GenreController::delete
