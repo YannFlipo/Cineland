@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block titre %}
+	{{ parent() }} : Accueil
+{% endblock %}
+
+{% block contenu %}
+	<h3>Gestion de CINELAND</h3>
+	<p>Bonjour {{ nom }}: Bienvenue à Cineland !!</p>
+	<p>Le Cinema qui vous propose les meilleurs films des meilleurs acteurs de la décénie !!</p>
+	<p><i>Page visitée {{ nbreFois }} fois.</i></p>
+{% endblock %}

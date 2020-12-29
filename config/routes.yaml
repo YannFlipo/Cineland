@@ -46,3 +46,8 @@ genre_edit:
 genre_delete:
   path: /genre_delete/{id}
   controller: App\Controller\GenreController::delete
+accueil:
+  path: /accueil/{nom}
+  controller: App\Controller\BaseController::accueil
+  defaults:
+      nom: ""
