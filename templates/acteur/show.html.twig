@@ -23,6 +23,14 @@
                 <th>Nationalite</th>
                 <td>{{ acteur.nationalite }}</td>
             </tr>
+            <tr>
+                <th>Films</th>
+                {% for films in acteur.getFilms() %}
+                <td>{{ films }}</td>
+                {% else %}
+                    <td colspan="5">Aucun film</td>
+                {% endfor %}
+            </tr>
         </tbody>
     </table>
 
