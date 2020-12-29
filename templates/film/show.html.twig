@@ -32,6 +32,10 @@
                 <td>{{ film.ageMinimal }}</td>
             </tr>
             <tr>
+                <th>Genre</th>
+                <td>{{ film.getGenre }}</td>
+            </tr>
+            <tr>
                 <th>Acteurs</th>
                 {% for acteur in film.getActeurs() %}
                     <td>{{ acteur }}</td>
