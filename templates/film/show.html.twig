@@ -31,6 +31,15 @@
                 <th>AgeMinimal</th>
                 <td>{{ film.ageMinimal }}</td>
             </tr>
+            <tr>
+                <th>Acteurs</th>
+                {% for acteur in film.getActeurs() %}
+                    <td>{{ acteur }}</td>
+                {% else %}
+                    <td colspan="7">Aucun acteur</td>
+                {% endfor %}
+
+            </tr>
         </tbody>
     </table>
 

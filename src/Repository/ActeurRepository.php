@@ -19,10 +19,11 @@ class ActeurRepository extends ServiceEntityRepository
         parent::__construct($registry, Acteur::class);
     }
 
-    // /**
-    //  * @return Acteur[] Returns an array of Acteur objects
-    //  */
-    /*
+     
+    /**
+    * @return Acteur[] Returns an array of Acteur objects
+    */
+    
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('a')
@@ -34,7 +35,7 @@ class ActeurRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?Acteur

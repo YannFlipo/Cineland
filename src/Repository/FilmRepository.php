@@ -19,10 +19,10 @@ class FilmRepository extends ServiceEntityRepository
         parent::__construct($registry, Film::class);
     }
 
-    // /**
-    //  * @return Film[] Returns an array of Film objects
-    //  */
-    /*
+    /**
+    * @return Film[] Returns an array of Film objects
+    */
+    
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('f')
@@ -34,7 +34,7 @@ class FilmRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?Film
