@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\FilmRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,27 +21,42 @@ class Film
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
+    * @ORM\Column(type="string", length=255)
+    * @Assert\Length(min=1, max=255,
+    *               exactMessage="Votre titre doit faire {{ limit }} caractères max")
+    */
     private $titre;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\LessThanOrEqual(value = 1000,
+     *                          message="la valeur doit être <= {{ compared_value }}")
+     * @Assert\GreaterThanOrEqual(value = 1,
+     *                          message="la valeur doit être >= {{ compared_value }}")
      */
     private $duree;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\Date
      */
     private $dateSortie;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\LessThanOrEqual(value = 20,
+     *                          message="la valeur doit être <= {{ compared_value }}")
+     * @Assert\GreaterThanOrEqual(value = 0,
+     *                          message="la valeur doit être >= {{ compared_value }}")
      */
     private $note;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\LessThanOrEqual(value = 120,
+     *                          message="la valeur doit être <= {{ compared_value }}")
+     * @Assert\GreaterThanOrEqual(value = 0,
+     *                          message="la valeur doit être >= {{ compared_value }}")
      */
     private $ageMinimal;
 

@@ -6,6 +6,7 @@ use App\Repository\ActeurRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ActeurRepository::class)
@@ -20,17 +21,22 @@ class Acteur
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255) 
+     * @Assert\Length(min=1, max=255,
+     *               exactMessage="Votre nom et prenom doivent faire {{ limit }} caractères max")
      */
     private $nomPrenom;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\Date
      */
     private $dateNaissance;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=1, max=255,
+     *               exactMessage="Votre titre doit faire {{ limit }} caractères max")
      */
     private $nationalite;
 
