@@ -10,14 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/genre")
- */
+
 class GenreController extends AbstractController
 {
-    /**
-     * @Route("/", name="genre_index", methods={"GET"})
-     */
+
     public function index(GenreRepository $genreRepository): Response
     {
         return $this->render('genre/index.html.twig', [
@@ -25,9 +21,7 @@ class GenreController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/new", name="genre_new", methods={"GET","POST"})
-     */
+
     public function new(Request $request): Response
     {
         $genre = new Genre();
@@ -48,9 +42,7 @@ class GenreController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="genre_show", methods={"GET"})
-     */
+
     public function show(Genre $genre): Response
     {
         return $this->render('genre/show.html.twig', [
@@ -58,9 +50,7 @@ class GenreController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}/edit", name="genre_edit", methods={"GET","POST"})
-     */
+
     public function edit(Request $request, Genre $genre): Response
     {
         $form = $this->createForm(GenreType::class, $genre);
@@ -78,9 +68,7 @@ class GenreController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="genre_delete", methods={"DELETE"})
-     */
+
     public function delete(Request $request, Genre $genre): Response
     {
         if ($this->isCsrfTokenValid('delete'.$genre->getId(), $request->request->get('_token'))) {

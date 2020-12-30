@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+ 	Action 14 :
+{% endblock %}
+
+{% block body %}
+		<ul>
+ 			{% for film in films %}
+				<li> <a href="{{ path('film_show', { 'id': film.id }) }}">{{film.titre}}</a> Date de sortie: {{film.dateSortie}} </li>
+			{% endfor %}
+		</ul>
+
+{% endblock %}

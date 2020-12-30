@@ -19,6 +19,12 @@ class FilmRepository extends ServiceEntityRepository
         parent::__construct($registry, Film::class);
     }
 
+    public function findFilmDateant($date) {
+        $query = $this->getEntityManager()
+                      ->createQuery("SELECT f FROM App\Entity\Film f WHERE f.dateSortie < $date");
+        return $query->getResult();
+    }
+
     /**
     * @return Film[] Returns an array of Film objects
     */

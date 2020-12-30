@@ -51,3 +51,6 @@ accueil:
   controller: App\Controller\BaseController::accueil
   defaults:
       nom: ""
+film_action14:
+  path: /film/action14
+  controller: App\Controller\FilmController::action14
