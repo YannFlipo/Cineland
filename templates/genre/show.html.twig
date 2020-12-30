@@ -19,8 +19,8 @@
             </tr>
             <tr>
                 <th>Films</th>
-                {% for films in genre.getFilms() %}
-                <td>{{ films }}</td>
+                {% for film in genre.getFilms() %}
+                    <td>{{ film }}</td>
                 {% else %}
                     <td colspan="5">Aucun film</td>
                 {% endfor %}
