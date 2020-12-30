@@ -28,7 +28,6 @@ class FilmRepository extends ServiceEntityRepository
     /**
     * @return Film[] Returns an array of Film objects
     */
-    
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('f')

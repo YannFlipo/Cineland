@@ -47,6 +47,7 @@ class GenreController extends AbstractController
     {
         return $this->render('genre/show.html.twig', [
             'genre' => $genre,
+            'message' => ""
         ]);
     }
 
@@ -72,9 +73,16 @@ class GenreController extends AbstractController
     public function delete(Request $request, Genre $genre): Response
     {
         if ($this->isCsrfTokenValid('delete'.$genre->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($genre);
-            $entityManager->flush();
+            if ($genre->getFilms()->isEmpty()) {   
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->remove($genre);
+                $entityManager->flush();
+            }else{
+                return $this->render('genre/show.html.twig', [
+                    'genre' => $genre,
+                    'message' => "Impossible de supprimer un genre non vide"
+                ]);
+            }
         }
 
         return $this->redirectToRoute('genre_index');

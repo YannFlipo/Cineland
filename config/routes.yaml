@@ -50,7 +50,7 @@ accueil:
   path: /accueil/{nom}
   controller: App\Controller\BaseController::accueil
   defaults:
-      nom: ""
+    nom: ""
 film_action14:
   path: /film/action14
   controller: App\Controller\FilmController::action14

@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+	ouipuio
 		<ul>
  			{% for film in films %}
 				<li> <a href="{{ path('film_show', { 'id': film.id }) }}">{{film.titre}}</a> Date de sortie: {{film.dateSortie}} </li>
