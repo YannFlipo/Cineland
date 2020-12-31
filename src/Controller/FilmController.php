@@ -93,9 +93,9 @@ class FilmController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $date = $film->getDateSortie();
-            $date = $date->format('Y-m-d');
             $films = $this->getDoctrine()
-                           ->getRepository(Film::class)->findFilmDateant($date);
+                           ->getRepository(Film::class)->findFilmDateAnt($date);
+            dump($films);
             return $this->render('film/resulta14.html.twig', array('films' => $films));
         }
         
