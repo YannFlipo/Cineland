@@ -8,7 +8,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Titre</th>
                 <th>Duree</th>
                 <th>DateSortie</th>
@@ -20,7 +19,6 @@
         <tbody>
         {% for film in films %}
             <tr>
-                <td>{{ film.id }}</td>
                 <td>{{ film.titre }}</td>
                 <td>{{ film.duree }}</td>
                 <td>{{ film.dateSortie ? film.dateSortie|date('Y-m-d') : '' }}</td>

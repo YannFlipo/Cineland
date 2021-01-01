@@ -54,3 +54,6 @@ accueil:
 film_action14:
   path: /film/action14
   controller: App\Controller\FilmController::action14
+init:
+  path: /cineland/init
+  controller: App\Controller\BaseController::init

@@ -8,7 +8,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>NomPrenom</th>
                 <th>DateNaissance</th>
                 <th>Nationalite</th>
@@ -18,7 +17,6 @@
         <tbody>
         {% for acteur in acteurs %}
             <tr>
-                <td>{{ acteur.id }}</td>
                 <td>{{ acteur.nomPrenom }}</td>
                 <td>{{ acteur.dateNaissance ? acteur.dateNaissance|date('Y-m-d') : '' }}</td>
                 <td>{{ acteur.nationalite }}</td>
