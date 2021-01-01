@@ -86,7 +86,10 @@ class FilmController extends AbstractController
     public function action14(Request $request) {
         $film = new Film;
         $form = $this->createFormBuilder($film)
-        ->add('dateSortie', DateType::class)
+        ->add('dateSortie', DateType::class, array(
+                   'label' => 'Date de Sortie',
+                   'years' => range(date('1900'), date('Y')),
+                   'required' => true))
         ->add('envoyer', SubmitType::class)
         ->getForm();
         $form->handleRequest($request);

@@ -22,7 +22,7 @@
             <tr>
                 <th>Films</th>
                 {% for film in acteur.getFilms() %}
-                    <td><a href="{{ path('acteur_edit', {'id': acteur.id}) }}">{{ film }}</a> - {{ film.getDuree() }} min </td></tr>
+                    <td><a href="{{ path('film_show', {'id': film.id}) }}">{{ film }}</a> - {{ film.getDuree() }} min </td></tr>
                     <tr><th></th>
                 {% else %}
                     <td colspan="5">Aucun film</td>
